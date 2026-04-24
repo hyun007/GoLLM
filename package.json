@@ -1,0 +1,18 @@
+{
+  "name": "minecraft-rcon-llm",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Connect an LLM (llama.cpp or any OpenAI-compatible endpoint) to a Minecraft server via RCON",
+  "scripts": {
+    "admin": "node index.js admin",
+    "chatbot": "node index.js chatbot",
+    "autonomous": "node index.js autonomous"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "openai": "^4.77.0",
+    "rcon-client": "^4.2.4",
+    "ssh2": "^1.16.0",
+    "ws": "^8.18.0"
+  }
+}

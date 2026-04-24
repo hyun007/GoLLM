@@ -1,0 +1,26 @@
+services:
+  minecraft-llm:
+    image: ghcr.io/GITHUB_USER/minecraft-rcon-llm:latest
+    restart: unless-stopped
+    environment:
+      # --- Mode: chatbot | autonomous | admin (admin requires -it) ---
+      MODE: chatbot
+
+      # --- LLM endpoint (llama.cpp or any OpenAI-compatible server) ---
+      LLM_BASE_URL: http://192.168.1.X:8080/v1
+      LLM_MODEL: llama3
+      LLM_API_KEY: none
+
+      # --- GoTTY web console (binhex/arch-minecraftserver) ---
+      GOTTY_HOST: 192.168.1.X
+      GOTTY_PORT: 8222
+      GOTTY_USER: admin
+      GOTTY_PASSWORD: changeme
+
+      # --- Autonomous mode tick interval (ms) ---
+      AUTONOMOUS_INTERVAL: 60000
+
+      # --- RCON (only if not using GoTTY) ---
+      # RCON_HOST: 192.168.1.X
+      # RCON_PORT: 25575
+      # RCON_PASSWORD: changeme
